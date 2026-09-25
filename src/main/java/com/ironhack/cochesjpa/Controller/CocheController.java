@@ -50,7 +50,7 @@ public class CocheController {
         return cocheService.obtenerPorId(id)
                 .map(cocheExistente -> {
 
-                    cocheExistente.setMarca(coche.getMarca());
+                    cocheExistente.setMarcaId(coche.getMarcaId());
                     cocheExistente.setModelo(coche.getModelo());
                     cocheExistente.setMatricula(coche.getMatricula());
                     cocheExistente.setPrecio(coche.getPrecio());

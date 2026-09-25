@@ -1,6 +1,8 @@
 package com.ironhack.cochesjpa.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,8 +19,10 @@ public class Coche {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String marca;
+    @ManyToOne
+    @JoinColumn(name = "id_marca")
+    @JsonBackReference
+    private Marca marcaId;
 
     @Column(nullable = false)
     private String modelo;
